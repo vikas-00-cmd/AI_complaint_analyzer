@@ -1,5 +1,4 @@
-# AI complaint analyser developed using python and react
-
+# AI complaint analyser developed using python and typescrpt
 A modern, full-stack web application for managing customer complaints and product batches in a Quality Management System (QMS). Built with FastAPI backend and React/TypeScript frontend, featuring AI-powered complaint processing and analysis.
 
 ## 📋 Table of Contents
