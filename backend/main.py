@@ -1,0 +1,32 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.routers import customers, products, batches, complaints, ai
+from models import Base, engine
+
+app = FastAPI(
+    title="AIVOA QMS Customer Complaint Management API",
+    version="1.0.0"
+)
+
+ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(customers.router)
+app.include_router(products.router)
+app.include_router(batches.router)
+app.include_router(complaints.router)
+app.include_router(ai.router)
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "service": "AIVOA QMS Backend"}

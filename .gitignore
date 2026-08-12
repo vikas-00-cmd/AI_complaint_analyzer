@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+backend/venv/
+
+# Environment variables (contains secrets)
+.env
+.env.example
+backend/.env
+backend/.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+
+# Database
+*.db
+*.sqlite3
